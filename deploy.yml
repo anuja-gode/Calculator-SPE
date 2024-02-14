@@ -3,6 +3,7 @@
   hosts: localhost
   remote_user: anuja
   become: false
+  gather_facts: false
   tasks:
     - name: Pull Docker Image
       docker_image:
@@ -19,4 +20,4 @@
         name: docker
         state: started
     - name: Running container
-      shell: docker run -it -d --name calculator anujagode/calc
+      shell: docker run -it -d --name calc anujagode/calc
